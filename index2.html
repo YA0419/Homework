@@ -1,1 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅遊介紹</title>
 
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => {
+                sec.classList.remove('active');
+                sec.style.display = 'none';
+            });
+
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                targetSection.style.display = 'block';
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        window.addEventListener('load', function () {
+            const hash = window.location.hash.replace('#', '');
+
+            if (hash) {
+                showSection(hash);
+            } else {
+                showSection('taipei');
+            }
+        });
+    </script>
+
+    <style>
+        header {
+            background: #A5D6A7;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+            header h1,
+            header p,
+            header a {
+                color: white;
+            }
+
+            header a {
+                margin: 0 10px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+                header a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+    <style>
+
+        body {
+            font-family: "Noto Sans TC", sans-serif;
+            margin: 0;
+            background: #f9fafc;
+            color: #333;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: #A5D6A7;
+            padding: 10px;
+        }
+
+            nav button {
+                margin: 5px;
+                padding: 10px 20px;
+                border: none;
+                background: #2e7d32;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            nav button:hover {
+                background: #1e88e5;
+            }
+
+        section {
+            display: none;
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            border-left: 5px solid #2e7d32;
+            padding-left: 10px;
+            color: #2e7d32;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background: #f0f4f8;
+        }
+
+        .price-table td {
+            text-align: right;
+        }
+
+        .trip-type {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 6px;
+        }
+
+        .trip-type h3 {
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="d-flex align-items-center justify-content-between p-3">
+        <div>
+            <div class="d-flex align-items-center">
+                <img src="iamges/01.png" alt="Logo" width="70" height="70" class="me-2">
+                <h1 class="m-0" style="font-size: 2.5rem; font-weight: bold;">小葉旅遊</h1>
+            </div>
+            <p class="mb-0 small text-muted">自由行・跟團三天兩夜・跟團五天四夜</p>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-link active">首頁</a>
+            <a href="index2.html" class="nav-link">旅遊介紹</a>
+            <a href="index1.html" class="nav-link">立即報名</a>
+        </nav>
+    </header>
+
+    <nav>
+        <button onclick="showSection('taipei')">高雄 ⇄ 台北</button>
+        <button onclick="showSection('taichung')">高雄 ⇄ 台中</button>
+        <button onclick="showSection('chiayi')">高雄 ⇄ 嘉義</button>
+        <button onclick="showSection('kaohsiung')">高雄 ⇄ 高雄</button>
+        <button onclick="showSection('kenting')">高雄 ⇄ 墾丁</button>
+        <button onclick="showSection('hualien')">高雄 ⇄ 花蓮</button>
+    </nav>
+
+    <!-- 台北行程 -->
+    <section id="taipei" class="active">
+        <h2>🏙️ 高雄 ⇄ 台北</h2>
+
+        <div class="trip-type">
+            <h3>自由行建議</h3>
+            <p>交通：高鐵來回約 $2,980 / 人</p>
+            <p>住宿建議：Hotel Relax Ⅲ（每晚約 $2,800 / 雙人房）</p>
+            <p>推薦景點：西門町、台北101、士林夜市、陽明山、永康街</p>
+            <p>預估花費：約 $7,000 ~ $8,000 / 人</p>
+        </div>
+
+        <div class="trip-type">
+            <h3>跟團・三天兩夜</h3>
+
+            <h4>第一天：出發與西門町文化探索</h4>
+            <ul>
+                <li>交通：高鐵高雄 → 台北（約 2 小時）</li>
+                <li>景點：西門町徒步區、龍山寺、艋舺老街</li>
+                <li>午餐：阿宗麵線 + 青蛙撞奶</li>
+                <li>晚餐：西門町町食日式燒肉</li>
+                <li>住宿：旅樂序精品旅館（含早餐）</li>
+            </ul>
+
+            <h4>第二天：士林・陽明山・夜市美食</h4>
+            <ul>
+                <li>景點：陽明山國家公園、擎天崗草原、士林官邸、士林夜市大</li>
+                <li>午餐：陽明山竹子湖土雞城</li>
+                <li>晚餐：士林夜市</li>
+                <li>住宿：同前（旅樂序精品旅館）</li>
+            </ul>
+
+            <h4>第三天：台北101風景 → 回程</h4>
+            <ul>
+                <li>景點：台北101觀景台、信義商圈</li>
+                <li>午餐：鼎泰豐信義店</li>
+                <li>交通：高鐵台北 → 高雄</li>
+            </ul>
+
+            <p><strong>三天兩夜總花費預估：</strong> 約 NT$ 7,800 / 人（不含購物）</p>
+        </div>
+
+        <div class="trip-type">
+            <h3>跟團・五天四夜</h3>
+
+            <h4>第一天：台北老城漫遊</h4>
+            <ul>
+                <li>交通：高鐵高雄 → 台北（約 2 小時）</li>
+                <li>景點：北門、剝皮寮老街、中正紀念堂、信義區夜景</li>
+                <li>午餐：金峰滷肉飯</li>
+                <li>晚餐：永康街美食</li>
+                <li>住宿：和苑三井花園飯店（含早餐）</li>
+            </ul>
+
+            <h4>第二天：陽明山・士林夜市</h4>
+            <ul>
+                <li>景點：陽明山國家公園、擎天崗草原、士林官邸、士林夜市大</li>
+                <li>午餐：陽明山竹子湖土雞城</li>
+                <li>晚餐：士林夜市</li>
+                <li>住宿：同前（和苑三井花園飯店）</li>
+            </ul>
+
+            <h4>第三天：淡水・北投溫泉</h4>
+            <ul>
+                <li>景點：淡水老街、北投溫泉博物館</li>
+                <li>午餐：紅毛城附近咖啡館</li>
+                <li>晚餐：北投日式懷石料理</li>
+                <li>住宿：同前（和苑三井花園飯店）</li>
+            </ul>
+
+            <h4>第四天：九份・十分一日遊</h4>
+            <ul>
+                <li>景點：九份老街、十分老街、饒河夜市</li>
+                <li>午餐：九份阿妹茶樓</li>
+                <li>晚餐：饒河夜市美食</li>
+                <li>住宿：同前（和苑三井花園飯店）</li>
+            </ul>
+
+            <h4>第五天：台北101風景 → 回程</h4>
+            <ul>
+                <li>景點：台北101觀景台、信義商圈</li>
+                <li>午餐：欣葉日本料理自助餐</li>
+                <li>交通：高鐵台北 → 高雄</li>
+            </ul>
+
+            <p><strong>五天四夜總花費預估：</strong> 約 NT$ 14,680 / 人（不含購物）</p>
+        </div>
+    </section>
+
+    <!-- 台中行程 -->
+    <section id="taichung">
+        <h2>🌇 高雄 ⇄ 台中</h2>
+
+        <div class="trip-type">
+            <h3>自由行建議</h3>
+            <p>交通：高鐵來回約 $1,500 / 人（約 1 小時車程）</p>
+            <p>住宿建議：台中富信大飯店 Fortune Hiya Hotel（每晚約 $2,800 / 雙人房）</p>
+            <p>推薦景點：宮原眼科、柳川水岸、審計新村、彩虹眷村、高美濕地、勤美綠園道</p>
+            <p>預估花費：約 $8,000 ~ $9,000 / 人</p>
+        </div>
+
+        <div class="trip-type">
+            <h3>跟團・三天兩夜</h3>
+
+            <h4>第一天：台中市區探索</h4>
+            <ul>
+                <li>交通：高鐵高雄 → 台中（約 1 小時）</li>
+                <li>景點：台中車站舊城區、宮原眼科、柳川水岸步道、審計新村</li>
+                <li>午餐：第二市場小吃（滷肉飯、米粉湯）</li>
+                <li>晚餐：一中街夜市</li>
+                <li>住宿：台中富信大飯店（含早餐）</li>
+            </ul>
+
+            <h4>第二天：自然與藝術日</h4>
+            <ul>
+                <li>景點：彩虹眷村、國立自然科學博物館、草悟道、勤美誠品綠園道</li>
+                <li>午餐：綠園道早午餐</li>
+                <li>晚餐：逢甲夜市</li>
+                <li>住宿：同前（台中富信大飯店）</li>
+            </ul>
+
+            <h4>第三天：文青與購物 → 回程</h4>
+            <ul>
+                <li>景點：台中國家歌劇院、秋紅谷、三井Outlet台中港</li>
+                <li>午餐：Outlet美食街</li>
+                <li>交通：高鐵台中 → 高雄</li>
+            </ul>
+
+            <p><strong>三天兩夜總花費預估：</strong> 約 NT$ 8,700 / 人（不含購物）</p>
+        </div>
+
+        <div class="trip-type">
+            <h3>跟團・五天四夜</h3>
+
+            <h4>第一天：文化漫遊日</h4>
+            <ul>
+                <li>交通：高鐵高雄 → 台中（約 1 小時）</li>
+                <li>景點：宮原眼科、審計新村、草悟道</li>
+                <li>午餐：第二市場（滷肉飯、台中肉圓）</li>
+                <li>晚餐：草悟道周邊餐廳</li>
+                <li>住宿：台中公園智選假日飯店（含早餐）</li>
+            </ul>
+
+            <h4>第二天：自然與文化之日</h4>
+            <ul>
+                <li>景點：台中國家歌劇院、新光三越、彩虹眷村、高美濕地</li>
+                <li>午餐：新光三越百貨餐廳</li>
+                <li>晚餐：高美濕地周邊海鮮餐廳li>
+                <li>住宿：同前(台中公園智選假日飯店)</li>
+            </ul>
+
+            <h4>第三天：日月潭一日遊</h4>
+            <ul>
+                <li>景點：日月潭風景區、伊達邵碼頭、玄光寺碼頭</li>
+                <li>午餐：伊達邵老街</li>
+                <li>晚餐：埔里酒廠附近台菜</li>
+                <li>住宿：同前(台中公園智選假日飯店)</li>
+            </ul>
+
+            <h4>第四天：山城探訪與夜市美食</h4>
+            <ul>
+                <li>景點：后里麗寶樂園、東豐自行車綠廊、豐原廟東夜市</li>
+                <li>午餐：樂園內自助餐</li>
+                <li>晚餐：豐原廟東夜市</li>
+                <li>住宿：同前(台中公園智選假日飯店)</li>
+            </ul>
+
+            <h4>第五天：文青早晨 → 回程</h4>
+            <ul>
+                <li>景點：勤美誠品綠園道</li>
+                <li>午餐：小義大利餐廳</li>
+                <li>交通：高鐵台中 → 高雄</li>
+            </ul>
+
+            <p><strong>五天四夜總花費預估：</strong> 約 NT$ 10,500 / 人（不含購物）</p>
+        </div>
+    </section>
+
+    <!-- 嘉義行程 -->
+    <section id="chiayi">
+        <h2>🚂 高雄 ⇄ 嘉義 自由行建議</h2>
+        <div class="trip-type">
+            <h3>自由行建議</h3>
+            <p>交通：高雄 → 嘉義（高鐵約 30 分鐘 / 台鐵自強號約 1.5 小時 / 開車約 1.5 小時）</p>
+            <p>住宿建議：嘉義兆品酒店或嘉楠風華酒店（每晚約 NT$2,800 / 雙人房）</p>
+            <p>推薦景點：阿里山森林遊樂區、檜意森活村、文化路夜市、嘉義市立美術館、故宮南院、高跟鞋教堂、太平雲梯</p>
+            <p>預估花費：約 NT$6,500 ~ NT$8,500 / 人</p>
+        </div>
+        <div class="trip-type">
+            <h3>跟團・三天兩夜</h3>
+
+            <h4>第一天：出發・嘉義市區文創漫遊</h4>
+            <ul>
+                <li>交通：高雄 → 嘉義（台鐵或團體專車）</li>
+                <li>景點：嘉義市立美術館、檜意森活村（全台最大日式建築群）、森林之歌</li>
+                <li>午餐：嘉義特色火雞肉飯（如劉里長或阿霞）</li>
+                <li>晚餐：文化路夜市（林聰明砂鍋魚頭）</li>
+                <li>住宿：嘉義兆品酒店（含早餐）</li>
+            </ul>
+
+            <h4>第二天：阿里山・森林芬多精之旅</h4>
+            <ul>
+                <li>景點：阿里山國家風景區、姊妹潭、受鎮宮、阿里山神木群步道</li>
+                <li>午餐：阿里山賓館或山產料理</li>
+                <li>晚餐：嘉義市區在地熱炒</li>
+                <li>住宿：同前（嘉義兆品酒店）</li>
+</ul>
+
+            <h4>第三天：藝術與回程</h4>
+            <ul>
+                <li>景點：故宮南院（水墨建築與珍寶收藏）、蒜頭糖廠蔗埕文化園區</li>
+                <li>午餐：故宮南院周邊特色餐廳</li>
+                <li>交通：專車或火車返回高雄</li>
+            </ul>
+
+            <p><strong>三天兩夜總花費預估：</strong> 約 NT$6,800 / 人（不含購物）</p>
+        </div>
+
+        <div class="trip-type">
+            <h3>跟團・五天四夜</h3>
+
+            <h4>第一天：文化與歷史初探</h4>
+            <ul>
+                <li>交通：高雄 → 嘉義（專車或台鐵）</li>
+                <li>景點：嘉義公園（射日塔）、獄政博物館、嘉義市立美術館</li>
+                <li>午餐：嘉義市區老宅料理</li>
+                <li>晚餐：文化路夜市美食巡禮/li>
+                <li>住宿：嘉楠風華酒店（含早餐）</li>
+            </ul>
+
+            <h4>第二天：阿里山深度・雲海日出之約</h4>
+            <ul>
+                <li>景點：奮起湖老街、阿里山森林火車體驗、阿里山國家公園</li>
+                <li>午餐：奮起湖知名鐵路便當</li>
+                <li>晚餐：阿里山特色風味餐</li>
+                <li>住宿：阿里山賓館或園區內特色旅店</li>
+            </ul>
+
+            <h4>第三天：雲端美景・山城慢活</h4>
+            <ul>
+                <li>景點：祝山觀日出、梅山太平雲梯（全台最長景觀吊橋）、太平老街</li>
+                <li>午餐：梅山在地野菜料理</li>
+                <li>晚餐：嘉義市區居酒屋</li>
+                <li>住宿：嘉楠風華酒店（含早餐）</li>
+            </ul>
+
+            <h4>第四天：海線風情・鹽田風景</h4>
+            <ul>
+                <li>景點：故宮南院、布袋高跟鞋教堂、好美里 3D 彩繪村</li>
+                <li>午餐：布袋港新鮮海鮮大餐</li>
+                <li>晚餐：嘉義在地私房料理</li>
+                <li>住宿：同前（嘉楠風華酒店）</li>
+            </ul>
+
+            <h4>第五天：文創採買 → 回程</h4>
+            <ul>
+                <li>景點：檜意森活村、北門驛、伴手禮商圈（福義軒蛋捲、御香屋葡萄柚綠茶）</li>
+                <li>午餐：嘉義特色砂鍋魚頭</li>
+                <li>交通：台鐵 / 專車返回高雄</li>
+            </ul>
+
+            <p><strong>五天四夜總花費預估：</strong> 約 NT$11,500 ~ NT$13,500 / 人（不含購物）</p>
+        </div>
+    </section>
+
+    <!-- 高雄本地 -->
+    <section id="kaohsiung">
+        <h2>🏖️ 高雄 ⇄ 高雄（在地旅遊）</h2>
+        <div class="trip-type">
+            <h3>自由行建議</h3>
+            <p>交通：高雄捷運 + YouBike + 計程車</p>
+            <p>住宿建議：HOTEL COZZI 高雄中山館（每晚約 $2,500 / 雙人房）</p>
+            <p>推薦景點：駁二藝術特區、棧貳庫 KW2、愛河之心、高雄流行音樂中心、鳳山黃埔新村、新堀江商圈</p>
+            <p>預估花費：約 $7,000 ~ $8,000 / 人</p>
+        </div>
+        <div class="trip-type">
+            <h3>跟團・三天兩夜</h3>
+
+            <h4>第一天：港都漫遊</h4>
+            <ul>
+                <li>交通：高雄捷運 + YouBike + 公車 + 計程車</li>
+                <li>景點：駁二藝術特區、壽山情人觀景台、哈瑪星鐵道文化園區、愛河</li>
+                <li>午餐：大港倉美食街（異國料理）</li>
+                <li>晚餐：鴨肉珍、阿囉哈滷味</li>
+                <li>住宿：高雄中央公園英迪格酒店（含早餐）</li>
+            </ul>
+
+            <h4>第二天：旗津海岸・棧貳庫・夜市美食</h4>
+            <ul>
+                <li>景點：旗津、棧貳庫KW2、真愛碼頭、六合夜市</li>
+                <li>午餐：旗津海鮮大餐</li>
+                <li>晚餐：六合夜市</li>
+                <li>住宿：同前（高雄中央公園英迪格酒店）</li>
+            </ul>
+
+            <h4>第三天：壽山動物園・蓮池潭・返程 → 回程</h4>
+            <ul>
+                <li>景點：壽山動物園、蓮池潭風景區、左營高鐵商圈</li>
+                <li>午餐：西子灣周邊餐廳（義大利麵、輕食）</li>
+                <li>交通：高雄捷運 + YouBike + 公車 + 計程車</li>
+            </ul>
+
+            <p><strong>三天兩夜總花費預估：</strong> 約 NT$ 7,000 / 人（不含購物）</p>
+        </div>
+
+        <div class="trip-type">
+            <h3>跟團・五天四夜</h3>
+
+            <h4>第一天：港都慢旅・山海文化五日遊</h4>
+            <ul>
+                <li>交通：高雄捷運 + YouBike + 公車 + 計程車</li>
+                <li>景點：駁二藝術特區、棧貳庫KW2、愛河</li>
+                <li>午餐：鹽埕區(老江紅茶牛奶)、(阿囉哈滷味)</li>
+                <li>晚餐：六合夜市</li>
+                <li>住宿：HOTEL COZZI 高雄中山館（含早餐）</li>
+            </ul>
+
+            <h4>第二天：旗津海風・鼓山老街</h4>
+            <ul>
+                <li>景點：旗津、英國領事館、打狗鐵道故事館、三多商圈百貨</li>
+                <li>午餐：阿霞海產</li>
+                <li>晚餐：三多商圈美食</li>
+                <li>住宿：同前（HOTEL COZZI 高雄中山館）</li>
+            </ul>
+
+            <h4>第三天：山景・溫泉・在地生活</h4>
+            <ul>
+                <li>景點：寶來、田寮、茂林、高雄港</li>
+                <li>午餐：溫泉區當地料理</li>
+                <li>晚餐：苓雅夜市</li>
+                <li>住宿：同前（HOTEL COZZI 高雄中山館）</li>
+            </ul>
+
+            <h4>第四天：文青日・市區探索</h4>
+            <ul>
+                <li>景點：高雄流行音樂中心、大港橋、鳳山黃埔新村</li>
+                <li>午餐：前鎮(貳樓)</li>
+                <li>晚餐：瑞豐夜市</li>
+                <li>住宿：同前（HOTEL COZZI 高雄中山館）</li>
+            </ul>
+
+            <h4>第五天：購物・收心之旅 → 回程</h4>
+            <ul>
+                <li>景點：三多百貨商圈購物、高雄85大樓觀景台</li>
+                <li>午餐：港園牛肉麵</li>
+                <li>交通：高雄捷運 + YouBike + 公車 + 計程車</li>
+            </ul>
+
+            <p><strong>五天四夜總花費預估：</strong> 約 NT$ 9,000 / 人（不含購物）</p>
+        </div>
+    </section>
+
+    <!-- 墾丁 -->
+    <section id="kenting">
+        <h2>🌴 高雄 ⇄ 墾丁</h2>
+        <div class="trip-type">
+            <h3>自由行建議</h3>
+            <p>交通：租車自駕/墾丁快線（9189號）/拼車共乘</p>
+            <p>住宿建議：墾丁凱撒大飯店（每晚約 NT$3,500 / 雙人房）</p>
+            <p>推薦景點：墾丁大街、鵝鑾鼻燈塔、白沙灣、後壁湖海鮮、砂島貝殼砂展示館、恆春古城、龍磐公園、船帆石</p>
+            <p>預估花費：約 NT$8,000 ~ NT$10,000 / 人</p>
+        </div>
+        <div class="trip-type">
+            <h3>跟團・三天兩夜</h3>
+
+            <h4>第一天：南下之旅・海岸初探</h4>
+            <ul>
+                <li>交通：高雄 → 墾丁（專車接送）</li>
+                <li>景點：墾丁國家森林遊樂區、砂島、鵝鑾鼻公園、船帆石</li>
+                <li>午餐：枋山休息站午餐</li>
+                <li>晚餐：墾丁大街</li>
+                <li>住宿：墾丁凱撒大飯店（含早餐）</li>
+            </ul>
+
+            <h4>第二天：白沙灣・水上活動・恆春古鎮</h4>
+            <ul>
+                <li>景點：白沙灣（浮潛 / 水上摩托車體驗）、後壁湖漁港、恆春古城</li>
+                <li>午餐：後壁湖海產餐廳</li>
+                <li>晚餐：墾丁大街夜市</li>
+                <li>住宿：同前（墾丁凱撒大飯店）</li>
+            </ul>
+
+            <h4>第三天：龍磐日出 → 回程</h4>
+            <ul>
+                <li>景點：龍磐公園、風吹沙、屏東海生館</li>
+                <li>午餐：海生館餐廳</li>
+                <li>交通：專車返回高雄（約3小時）</li>
+            </ul>
+
+            <p><strong>三天兩夜總花費預估：</strong>約 NT$7,500 / 人（不含購物）</p>
+        </div>
+
+        <div class="trip-type">
+            <h3>跟團・五天四夜</h3>
+
+            <h4>第一天：高雄出發・南國之門</h4>
+            <ul>
+                <li>交通：高雄 → 墾丁（專車）</li>
+                <li>景點：車城福安宮、四重溪溫泉公園、海口港</li>
+                <li>午餐：枋山休息站</li>
+                <li>晚餐：墾丁大街</li>
+                <li>住宿：墾丁凱撒大飯店（含早餐）</li>
+            </ul>
+
+            <h4>第二天：藍海探索・白沙灣放鬆日</h4>
+            <ul>
+                <li>景點：白沙灣水上活動、後壁湖海洋風情、貝殼砂展示館</li>
+                <li>午餐：後壁湖海產料理</li>
+                <li>晚餐：大街燒烤餐廳</li>
+                <li>住宿：同前（墾丁凱撒大飯店）</li>
+            </ul>
+
+            <h4>第三天：自然生態・海生館知性之旅</h4>
+            <ul>
+                <li>景點：屏東海生館（全天）、海口沙灘</li>
+                <li>午餐：海生館園區內餐廳</li>
+                <li>晚餐：恆春鎮老街</li>
+                <li>住宿：同前（墾丁凱撒大飯店）</li>
+            </ul>
+
+            <h4>第四天：山海交錯・風景攝影日</h4>
+            <ul>
+                <li>景點：龍磐公園、風吹沙、鵝鑾鼻燈塔、船帆石</li>
+                <li>午餐：恆春鎮在地料理</li>
+                <li>晚餐：墾丁凱撒飯店自助晚餐</li>
+                <li>住宿：同前（墾丁凱撒大飯店）</li>
+            </ul>
+
+            <h4>第五天：恆春古城 → 回程</h4>
+            <ul>
+                <li>景點：恆春古城、南灣海灘</li>
+                <li>午餐：墾丁午餐簡餐</li>
+                <li>交通：專車返回高雄（約3小時）</li>
+            </ul>
+
+            <p><strong>五天四夜總花費預估：</strong> 約 NT$9,000 ~ NT$11,000 / 人（不含購物）</p>
+        </div>
+    </section>
+
+    <!-- 花蓮 -->
+    <section id="hualien">
+        <h2>⛰️ 高雄 ⇄ 花蓮</h2>
+
+        <div class="trip-type">
+            <h3>自由行建議</h3>
+            <p>交通：高雄 → 花蓮（台鐵普悠瑪號 / 租車自駕 / 台北轉乘）</p>
+            <p>住宿建議：花蓮福容大飯店（每晚約 NT$3,000 / 雙人房）</p>
+            <p>推薦景點：太魯閣國家公園、七星潭、東大門夜市、花蓮文化創意園區、鯉魚潭、貨櫃星巴克、清水斷崖</p>
+            <p>預估花費：約 NT$9,000 ~ NT$11,000 / 人</p>
+        </div>
+
+        <div class="trip-type">
+            <h3>跟團・三天兩夜</h3>
+
+            <h4>第一天：出發・花蓮市區探索</h4>
+            <ul>
+                <li>交通：高雄 → 花蓮（普悠瑪號或團體專車）</li>
+                <li>景點：花蓮文化創意園區、貨櫃星巴克、東大門夜市</li>
+                <li>午餐：花蓮文創園區美食街</li>
+                <li>晚餐：東大門夜市</li>
+                <li>住宿：花蓮福容大飯店（含早餐）</li>
+            </ul>
+
+            <h4>第二天：太魯閣・自然奇景之旅</h4>
+            <ul>
+                <li>景點：太魯閣國家公園、燕子口、長春祠、砂卡礑步道</li>
+                <li>午餐：太魯閣遊客中心附近餐廳</li>
+                <li>晚餐：花蓮市區在地料理</li>
+                <li>住宿：同前（花蓮福容大飯店）</li>
+            </ul>
+
+            <h4>第三天：海岸美景 → 回程</h4>
+            <ul>
+                <li>景點：七星潭、鯉魚潭、清水斷崖</li>
+                <li>午餐：七星潭海景咖啡廳</li>
+                <li>交通：專車或火車返回高雄</li>
+            </ul>
+
+            <p><strong>三天兩夜總花費預估：</strong> 約 NT$8,500 / 人（不含購物）</p>
+        </div>
+
+        <div class="trip-type">
+            <h3>跟團・五天四夜</h3>
+
+            <h4>第一天：南行北上・初抵花蓮</h4>
+            <ul>
+                <li>交通：高雄 → 花蓮（專車或普悠瑪號）</li>
+                <li>景點：花蓮港口風景區、松園別館</li>
+                <li>午餐：休息站簡餐</li>
+                <li>晚餐：東大門夜市</li>
+                <li>住宿：花蓮福容大飯店（含早餐）</li>
+            </ul>
+
+            <h4>第二天：太魯閣・山嵐溪谷探險</h4>
+            <ul>
+                <li>景點：太魯閣國家公園、燕子口、砂卡礑步道、長春祠</li>
+                <li>午餐：太魯閣遊客中心</li>
+                <li>晚餐：花蓮在地餐廳（推薦美崙紅茶、炸彈蔥油餅）</li>
+                <li>住宿：同前（花蓮福容大飯店）</li>
+            </ul>
+
+            <h4>第三天：山海結合・悠閒漫遊</h4>
+            <ul>
+                <li>景點：鯉魚潭、兆豐農場、吉安慶修院</li>
+                <li>午餐：農場自助餐</li>
+                <li>晚餐：東大門夜市</li>
+                <li>住宿：同前（花蓮福容大飯店）</li>
+            </ul>
+
+            <h4>第四天：海岸線・慢活時光</h4>
+            <ul>
+                <li>景點：七星潭、牛山呼庭、石梯坪、豐濱天空步道</li>
+                <li>午餐：海景咖啡廳</li>
+                <li>晚餐：花蓮市區（異國料理餐廳）</li>
+                <li>住宿：同前（花蓮福容大飯店）</li>
+            </ul>
+
+            <h4>第五天：購物 → 回程</h4>
+            <ul>
+                <li>景點：花蓮文化創意園區、伴手禮商圈（曾記麻糬、花蓮薯）</li>
+                <li>午餐：花蓮市區簡餐</li>
+                <li>交通：普悠瑪號 / 專車返回高雄</li>
+            </ul>
+
+            <p><strong>五天四夜總花費預估：</strong> 約 NT$10,000 ~ NT$12,000 / 人（不含購物）</p>
+        </div>
+    </section>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+            document.getElementById(id).classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
