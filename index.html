@@ -1,1 +1,310 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>旅遊網站</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="JS1.js"></script>
+</head>
+<body>
 
+
+    <nav class="navbar navbar-expand-lg" style="background-color: #A5D6A7;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="iamges/01.png" alt="Logo" width="30" height="30" class="me-2">小葉旅遊
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index2.html">旅遊介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index1.html">立即報名</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <br />
+
+    <div class="container text-center">
+
+
+        <div class="row">
+            <div class="col-12 p-3 mb-2" style="background-color: #e2efda; color: #333;">
+
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="iamges/01.jpg" class="d-block w-100" alt="YA">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>台北景點-台北101</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="iamges/02.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>台中景點-中國家歌劇院</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="iamges/03.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>嘉義景點-阿里山森林鐵路</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="iamges/04.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>高雄景點-蓮池潭龍虎塔</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="iamges/05.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>墾丁景點-鵝鑾鼻燈塔</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="iamges/06.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>花蓮景點-七星潭</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <style>
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                filter: invert(1);
+            }
+
+            .carousel-inner {
+                height: 300px;
+            }
+
+            .carousel-item {
+                height: 100%;
+            }
+
+                .carousel-item img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    background-color: #ffffff;
+                }
+
+
+            @media (min-width: 768px) {
+                .carousel-inner {
+                    height: 500px;
+                }
+            }
+        </style>
+
+        <br />
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 p-3 mb-2">
+                <div class="card" style="width: 100%;">
+                    <img src="iamges/01.jpg" class="card-img-top" alt="台北">
+                    <div class="card-body">
+                        <h5 class="card-title">台北行程</h5>
+                        <p class="card-text">101、西門町、陽明山美景。</p>
+                        <a href="index2.html#taipei" class="btn btn-primary">Connect</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 p-3 mb-2">
+                <div class="card" style="width: 100%;">
+                    <img src="iamges/02.jpg" class="card-img-top" alt="台中">
+                    <div class="card-body">
+                        <h5 class="card-title">台中行程</h5>
+                        <p class="card-text">宮原眼科、高美濕地探索。</p>
+                        <a href="index2.html#taichung" class="btn btn-primary">Connect</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 p-3 mb-2">
+                <div class="card" style="width: 100%;">
+                    <img src="iamges/03.jpg" class="card-img-top" alt="嘉義">
+                    <div class="card-body">
+                        <h5 class="card-title">嘉義行程</h5>
+                        <p class="card-text">阿里山小火車、檜意森活村。</p>
+                        <a href="index2.html#chiayi" class="btn btn-primary">Connect</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 p-3 mb-2">
+                <div class="card" style="width: 100%;">
+                    <img src="iamges/04.jpg" class="card-img-top" alt="高雄">
+                    <div class="card-body">
+                        <h5 class="card-title">高雄行程</h5>
+                        <p class="card-text">駁二、高流、旗津海風漫步。</p>
+                        <a href="index2.html#kaohsiung" class="btn btn-primary">Connect</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 p-3 mb-2">
+                <div class="card" style="width: 100%;">
+                    <img src="iamges/05.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">墾丁行程</h5>
+                        <p class="card-text">海生館、白沙灣水上活動。</p>
+                        <a href="index2.html#kenting" class="btn btn-primary">Connect</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 p-3 mb-2">
+                <div class="card" style="width: 100%;">
+                    <img src="iamges/06.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">花蓮行程</h5>
+                        <p class="card-text">太魯閣、七星潭壯麗景觀。</p>
+                        <a href="index2.html#hualien" class="btn btn-primary">Connect</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .card-body .btn-primary {
+                background-color: #4caf50;
+                border-color: #4caf50;
+                color: white;
+            }
+
+                .card-body .btn-primary:hover {
+                    background-color: #388e3c;
+                    border-color: #388e3c;
+                }
+
+            .card-img-top {
+                height: 250px;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            .card-body {
+                min-height: 180px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        </style>
+
+        <br />
+        <hr />
+
+        <div class="row my-5">
+            <div class="col-lg-12">
+                <h3 class="text-start mb-4">常見問題 Q&A</h3> <div class="accordion" id="travelQA">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#qaOne">
+                                Q1：小葉旅遊是什麼？
+                            </button>
+                        </h2>
+                        <div id="qaOne" class="accordion-collapse collapse show" data-bs-parent="#travelQA">
+                            <div class="accordion-body text-start">
+                                小葉旅遊是專為南台灣旅人打造、提供從高雄出發至全台各地的專業套裝行程與自由行規劃服務的旅行社。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#qaTwo">
+                                Q2：可以臨時更改旅遊日期嗎？
+                            </button>
+                        </h2>
+                        <div id="qaTwo" class="accordion-collapse collapse" data-bs-parent="#travelQA">
+                            <div class="accordion-body text-start">
+                                請於出發前 7 天撥打客服專線或回傳 Email，我們將盡力為您協調飯店與交通檔期。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#qaTwo">
+                                Q3：集合地點是在哪裡？
+                            </button>
+                        </h2>
+                        <div id="qaTwo" class="accordion-collapse collapse" data-bs-parent="#travelQA">
+                            <div class="accordion-body text-start">
+                                小葉旅遊所有行程均以高雄市區（如高雄車站、左營高鐵站或指定接送點）為出發起點，讓您免去北上集合的奔波。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            /* 美化 Q&A 顏色 */
+            .accordion-button:not(.collapsed) {
+                background-color: #e8f5e9; /* 淺綠色背景 */
+                color: #2e7d32; /* 深綠色文字 */
+                box-shadow: none;
+            }
+
+            .accordion-button:focus {
+                border-color: #81c784;
+                box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+            }
+
+            .accordion-button::after {
+                /* 如果你想要箭頭也變色，可以在這裡調整 */
+            }
+        </style>
+
+
+
+    </div>
+
+</body>
+</html>
